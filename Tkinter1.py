@@ -22,7 +22,16 @@ def anim(x,y,text,bcolor,fcolor,cmd):
     mybutton.bind("<Leave>", on_leave)
 
     mybutton.place(x=x,y=y)
+def open_win():
+    win=Toplevel()#создаём второе(дочернее) окно
+    win.geometry("300x500")
+    win.grab_set()#не позволяет закрыть основное окно, пока не закроем дочернее окно
+    win.configure(bg="#141414")
 
+
+
+
+    win.mainloop()
 def cmd():
     print("Quadratic equation")
     while 1:
@@ -42,9 +51,18 @@ def cmd():
 def cmd1():
     print("Exit . . . ")
     aken.destroy()
+def cmd2():
+    print("Toplevel")
+    aken.command=open_win()
+
 
 
 anim(0,0,"S O L V E R","#ffcc66","#141414",cmd)
 anim(0,37,"E X I T","#ffcc66","#141414",cmd1)
+anim(0,74,"N E W   T A B","#f86263","#141414", cmd2)
+
+#canvas=Canvas(aken,width=600,height=300)
+#canvas.grid(columnspan=3)
+
 
 aken.mainloop()
