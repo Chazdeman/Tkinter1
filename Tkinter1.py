@@ -1,6 +1,9 @@
 from tkinter import *
 from math import *
-global a,b,c, D
+import matplotlib.pyplot as plt
+import numpy as np
+global D, t
+D =-1
 aken=Tk()
 aken.geometry("300x500")
 aken.configure(bg="#141414")
@@ -23,41 +26,81 @@ def anim(x,y,text,bcolor,fcolor,cmd):
     mybutton.bind("<Leave>", on_leave)
 
     mybutton.place(x=x,y=y)
+def open_win1():
+    win1=Toplevel()#создаём второе(дочернее) окно
+    win1.grab_set()#не позволяет закрыть основное окно, пока не закроем дочернее окно
+    F = "1.gif" # файл с графическим изображением
+    c=Canvas(win1, width=600, height=600)
+    src_img = open(FILENAME)
+    img = PhotoImage(src_img)
+    c.create_image(0, 0, image=img, anchor="nw")
+    c.pack()
+    Label(win1, text=F).pack()
+    win1.configure(bg="#141414")
 
 def open_win():
     def lahenda():
-        if (a.get()!=" " and b.get()!=" " and c.get()!=" "):
-            a_=float(a.get())
-            b_=float(b.get())
-            c_=float(c.get())
-            D=b_*b_-4*a_*c_
-            if D>0:
-                x1_=round((-1*b_+sqrt(D))/(2*a_),2)
-                x2_=round((-1*b_-sqrt(D))/(2*a_),2)
-                t=f"x1={x1_}, \nx2={x2_}"
-                graf=True
-            elif D==0:
-                x1_=round((-1*b_)/(2*a_),2)
-                t=f"x1={x1_}"
-                graf=True
-            else:
-                t="No root."
+        global a,b,c,D,t
+        t=""
+        graf=""
+        if (a.get()!="" and b.get()!="" and c.get()!=""):
+            if (float(a.get())==0 and float(b.get())==0 and float(c.get())==0):
+                vastus.configure(text=f"Wrong!")
+                a.configure(bg="red")
+                b.configure(bg="red")
+                c.configure(bg="red")
                 graf=False
-            vastus.configure(text=f"D={D}\n{t}")
-            a.configure(bg="#f86263")
-            b.configure(bg="#f86263")
-            c.configure(bg="#f86263")
+            elif float(a.get())==0 and float(b.get())!=0 and float(c.get())!=0:
+                vastus.configure(text=f"Wrong!")
+                a.configure(bg="red")
+                b.configure(bg="#red")
+                c.configure(bg="#red")
+                graf=False
+            elif float(a.get())!=0 and float(b.get())==0 and float(c.get())!=0:
+                vastus.configure(text=f"Wrong!")
+                b.configure(bg="red")
+                a.configure(bg="#red")
+                c.configure(bg="#red")
+                graf=False
+            elif float(a.get())!=0 and float(b.get())!=0 and float(c.get())==0:
+                vastus.configure(text=f"Wrong!")
+                c.configure(bg="red")
+                b.configure(bg="#red")
+                a.configure(bg="#red")
+                graf=False
+            elif float(a.get())!=0 and float(b.get())!=0 and float(c.get())!=0:
+                a_=float(a.get())
+                b_=float(b.get())
+                c_=float(c.get())
+                D=b_*b_-4*a_*c_
+                if D > 0:
+                    x1_=round((-1*b_+sqrt(D))/(2*a_),2)
+                    x2_=round((-1*b_-sqrt(D))/(2*a_),2)
+                    t=f"X1={x1_}, \nX2={x2_}"
+                    graf=True
+                elif D == 0:
+                    x1_=round((-1*b_)/(2*a_),2)
+                    t=f"X1={x1_}"
+                    graf=True
+                else:
+                    t="No root"
+                    graf=False
+                vastus.configure(text=f"D={D}\n{t}")
+                a.configure(bg="#f86263")
+                b.configure(bg="#f86263")
+                c.configure(bg="#f86263")
         else:
-            if a.get()=="":
-                a.configure(bg="#de7879")
-            if b.get()=="":
-                b.configure(bg="#de7879")
-            if c.get()=="":
-                c.configure(bg="#de7879")
+
+           if a.get()=="":
+              a.configure(bg="red")
+           if b.get()=="":
+              b.configure(bg="red")
+           if c.get()=="":
+              c.configure(bg="red")
         return graf,D,t
     def graafik():
-        flag,D,t=lahenda()
-        if flag==True:
+        graf,D,t=lahenda()
+        if graf==True:
             a_=int(a.get())
             b_=int(b.get())
             c_=int(c.get())
@@ -67,14 +110,14 @@ def open_win():
             y=a_*x*x+b_*x+c_
             fig = plt.figure()
             plt.plot(x, y,'b:o', x0, y0,'g-d')
-            plt.title('Квадратное уравнение')
+            plt.title("Quadratic equation")
             plt.ylabel('y')
             plt.xlabel('x')
             plt.grid(True)
             plt.show()
             text=f"Вершина параболлы ({x0},{y0})"
         else:
-            text=f"График нет возможности построить"
+            text=f"No root."
         vastus.configure(text=f"D={D}\n{t}\n{text}")
     global a,b,c
     win=Toplevel()#создаём второе(дочернее) окно
@@ -103,6 +146,7 @@ def open_win():
     btn_g.pack(side=LEFT)
 
     win.mainloop()
+
 def cmd():
     print("Quadratic equation")
     while 1:
@@ -125,13 +169,16 @@ def cmd1():
 def cmd2():
     print("Toplevel")
     aken.command=open_win()
+def cmd3():
+    print("Formulas")
+    aken.command=open_win1()
 
 
 
-anim(0,0,"S O L V E R","#6598d6","#141414",cmd)
+anim(0,0,"C M D   S O L V E R","#6598d6","#141414",cmd)
 anim(0,37,"E X I T","#ffcc66","#141414",cmd1)
-anim(0,74,"N E W   T A B","#f86263","#141414", cmd2)
-
+anim(0,74,"Q U A D R A T I C   E Q U A T I O N","#f86263","#141414", cmd2)
+anim(0,148,"F O R M U L A S","#91de78","#141414", cmd3)
 #canvas=Canvas(aken,width=600,height=300)
 #canvas.grid(columnspan=3)
 
