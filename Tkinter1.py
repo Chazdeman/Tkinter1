@@ -317,7 +317,72 @@ def open_win():
 
     win.mainloop()
 
+def open_win3():
+    def lisa_nina():
+        if var_nina.get()=="Nina":
+            c.create_oval((225, 225, 275, 275), fill="#db5853", outline="black") #нос 
+        elif var_nina.get()=="tühi":
+            c.create_oval((225, 225, 275, 275), fill="#b39474", outline="#b39474") #нос 
+    def lisa_suu():
+        if var_suu.get()=="Suu":
+            c.create_arc((100, 300, 400,400),start=180,extent=180, style=ARC, fill="black", outline="black")
+        elif var_suu.get()=="tühi":
+            c.create_arc((100, 300, 400,400),start=180,extent=180, style=ARC,   fill="#b39474", outline="#b39474")
+    def lisa_eyes():
+        if var_eyes.get()=="Silmad":
+            c.create_oval((300, 100, 400, 200), fill="#a8a8a8", outline="black") #првый глаз
 
+
+            c.create_oval((200, 200, 100, 100), fill="#a8a8a8", outline="black") #левый глаз
+
+
+        elif var_eyes.get()=="tühi":
+            c.create_oval((300, 100, 400, 200),  fill="#b39474", outline="#b39474") #првый глаз
+            c.create_oval((200, 200, 100, 100),  fill="#b39474", outline="#b39474") #левый глаз
+    def brov():
+        if var_brov.get()=="Kulmu":
+            c.create_line((300, 80, 400, 100), fill="black", width=3) #првый brov
+            c.create_line((200, 80, 100, 100), fill="black", width=3) #levii brov
+        elif var_brov.get()=="tühi":
+            c.create_line((300, 80, 400, 100), fill="#b39474", width=3) #првый brov
+            c.create_line((200, 80, 100, 100), fill="#b39474", width=3) #levii brov
+    def zraki():
+        if var_zraki.get()=="Tera":
+
+            c.create_oval((375, 175, 325, 125), fill="black", outline="black") #првый z
+
+            c.create_oval((125, 125, 175, 175), fill="black", outline="black") #левый z
+
+        elif var_zraki.get()=="tühi":
+            c.create_oval((375, 175, 325, 125),  fill="#b39474", outline="#b39474") #првый z
+            c.create_oval((125, 125, 175, 175),  fill="#b39474", outline="#b39474") #левый z
+
+    win17=Toplevel()#создаём второе(дочернее) окно
+    win17.geometry("500x700")
+    win17.grab_set()#не позволяет закрыть основное окно, пока не закроем дочернее окно
+    win17.configure(bg="#d8e0ca")
+
+    c = Canvas(win17, width=500, height=500, bg="#c9c9c9")
+    c.create_oval((10, 10, 490, 490), fill="#b39474", outline="black") #лицо
+    var_nina=StringVar()
+    ch_nina=Checkbutton(win17,text="1. Nina", variable=var_nina, onvalue="Nina", bg="#95b374",offvalue="tühi",command=lisa_nina)
+    ch_nina.pack()
+    var_suu=StringVar()
+    ch_suu=Checkbutton(win17,text="2. Suu", variable=var_suu, onvalue="Suu", bg="#95b374",offvalue="tühi",command=lisa_suu)
+    ch_suu.pack()
+    var_eyes=StringVar()
+    ch_eyes=Checkbutton(win17,text="3. Silmad", variable=var_eyes, onvalue="Silmad", bg="#95b374",offvalue="tühi",command=lisa_eyes)
+    ch_eyes.pack()
+    var_brov=StringVar()
+    ch_brov=Checkbutton(win17,text="4. Kulmud", variable=var_brov, onvalue="Kulmu", bg="#95b374",offvalue="tühi",command=brov)
+    ch_brov.pack()
+    var_zraki=StringVar()
+    ch_zraki=Checkbutton(win17,text="5. Silma Tera", variable=var_zraki, bg="#95b374",  onvalue="Tera", offvalue="tühi",command=zraki)
+    ch_zraki.pack()
+
+    c.pack()
+
+    win17.mainloop()
 def cmd():
     print("Radio button")
     aken.command=open_win1()
@@ -331,11 +396,15 @@ def cmd2():
 def cmd3():
     print("Formulas")
     aken.command=open_win2()
+def cmd4():
+    print("Photo robot")
+    aken.command=open_win3()
 
 
 
 anim(0,0,"R A D I O   B U T T O N","#6598d6","#141414",cmd)
-anim(0,148,"E X I T","#ffcc66","#141414",cmd1)
+anim(0,111,"P H O T O   R O B O T","#e39259","#141414", cmd4)
+anim(0,185,"E X I T","#ffcc66","#141414",cmd1)
 anim(0,37,"Q U A D R A T I C   E Q U A T I O N","#f86263","#141414", cmd2)
 anim(0,74,"F O R M U L A S","#91de78","#141414", cmd3)
 #canvas=Canvas(aken,width=600,height=300)
