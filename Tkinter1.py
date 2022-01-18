@@ -201,12 +201,104 @@ def open_win1():
 def open_win2():
     #Formulas
     win2=Toplevel()#создаём второе(дочернее) окно
-    win2.geometry("500x400")
     win2.grab_set()#не позволяет закрыть основное окно, пока не закроем дочернее окно
     win2.configure(bg="#141414")
+    win2.geometry("980x710")
+
+    Label(win2, borderwidth=1, relief="flat",text=" ", width=20,height=5).grid(row=0, column=0)
+    Label(win2, borderwidth=1, relief="flat",text=" 0 ", width=10,height=5).grid(row=0, column=1)
+    Label(win2, borderwidth=1, relief="flat",text=" 1 ", width=10,height=5).grid(row=0, column=2)
+    Label(win2, borderwidth=1, relief="flat",text=" 2 ", width=10,height=5).grid(row=0, column=3)
+    Label(win2, borderwidth=1, relief="flat",text=" 3 ", width=10,height=5).grid(row=0, column=4)
+    Label(win2, borderwidth=1, relief="flat",text=" 4 ", width=10,height=5).grid(row=0, column=5)
+    Label(win2, borderwidth=1, relief="flat",text=" 5 ", width=10,height=5).grid(row=0, column=6)
+    Label(win2, borderwidth=1, relief="flat",text=" 6 ", width=10,height=5).grid(row=0, column=7)
+    Label(win2, borderwidth=1, relief="flat",text=" 7 ", width=10,height=5).grid(row=0, column=8)
+    Label(win2, borderwidth=1, relief="flat",text=" 8 ", width=10,height=5).grid(row=0, column=9)
+    Label(win2, borderwidth=1, relief="flat",text=" 9 ", width=10,height=5).grid(row=0, column=10)
+    Label(win2, borderwidth=1, relief="flat",text=" 10 ", width=10,height=5).grid(row=0, column=11)
+
+    Label(win2, borderwidth=1, relief="flat", text="7.40-8.25", width=10,height=2).grid(row=0, column=1,sticky=S)
+    Label(win2, borderwidth=1, relief="flat", text="8.30-9.15", width=10,height=2).grid(row=0, column=2,sticky=S)
+    Label(win2, borderwidth=1, relief="flat", text="9.20-10.05", width=10,height=2).grid(row=0, column=3,sticky=S)
+    Label(win2, borderwidth=1, relief="flat", text="10.10-10.55", width=10,height=2).grid(row=0, column=4,sticky=S)
+    Label(win2, borderwidth=1, relief="flat", text="11.00-11.45", width=10,height=2).grid(row=0, column=5,sticky=S)
+    Label(win2, borderwidth=1, relief="flat", text="11.50-12.35", width=10,height=2).grid(row=0, column=6,sticky=S)
+    Label(win2, borderwidth=1, relief="flat", text="12.40-13.25", width=10,height=2).grid(row=0, column=7,sticky=S)
+    Label(win2, borderwidth=1, relief="flat", text="13.30-14.15", width=10,height=2).grid(row=0, column=8,sticky=S)
+    Label(win2, borderwidth=1, relief="flat", text="14.20-15.05", width=10,height=2).grid(row=0, column=9,sticky=S)
+    Label(win2, borderwidth=1, relief="flat", text="15.10-15.55", width=10,height=2).grid(row=0, column=10,sticky=S)
+    Label(win2, borderwidth=1, relief="flat", text="16.00-16.45", width=10,height=2).grid(row=0, column=11,sticky=S)
 
 
-    win2.mainloop()
+    Label(win2, borderwidth=1, relief="flat",text="Esmaspäev", width=20,height=8).grid(row=1, column=0)
+    Label(win2, borderwidth=1, relief="flat",text="Teisipäev", width=20,height=8).grid(row=2, column=0)
+    Label(win2, borderwidth=1, relief="flat",text="Kolmapäev", width=20,height=8).grid(row=3, column=0)
+    Label(win2, borderwidth=1, relief="flat",text="Neljapäev", width=20,height=8).grid(row=4, column=0)
+    Label(win2, borderwidth=1, relief="flat",text="Reede", width=20,height=8).grid(row=5, column=0)
+
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=1, column=1)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=2, column=1)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=3, column=1)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=4, column=1)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=5, column=1)
+
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=1, column=2)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=1, column=3)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=1, column=4)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=1, column=5)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=1, column=6)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=1, column=7)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=1, column=8)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=1, column=9)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=1, column=10)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=1, column=11)
+
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=2, column=2)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=2, column=3)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=2, column=4)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=2, column=5)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=2, column=6)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=2, column=7)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=2, column=8)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=2, column=9)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=2, column=10)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=2, column=11)
+
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=3, column=2)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=3, column=3)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=3, column=4)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=3, column=5)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=3, column=6)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=3, column=7)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=3, column=8)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=3, column=9)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=3, column=10)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=3, column=11)
+
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=4, column=2)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=4, column=3)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=4, column=4)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=4, column=5)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=4, column=6)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=4, column=7)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=4, column=8)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=4, column=9)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=4, column=10)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=4, column=11)
+
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=5, column=2)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=5, column=3)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=5, column=4)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=5, column=5)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=5, column=6)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=5, column=7)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=5, column=8)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=5, column=9)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=5, column=10)
+    Label(win2, borderwidth=2, relief="groove",text=" ", width=10,height=8).grid(row=5, column=11)
+
+
 
 def open_win():
     def lahenda():
@@ -393,20 +485,23 @@ def cmd1():
 def cmd2():
     print("Toplevel")
     aken.command=open_win()
-def cmd3():
-    print("Formulas")
-    aken.command=open_win2()
 def cmd4():
     print("Photo robot")
     aken.command=open_win3()
+def cmd5():
+    print("Grid")
+    aken.command=open_win2()
 
 
 
 anim(0,0,"R A D I O   B U T T O N","#6598d6","#141414",cmd)
-anim(0,111,"P H O T O   R O B O T","#e39259","#141414", cmd4)
-anim(0,185,"E X I T","#ffcc66","#141414",cmd1)
 anim(0,37,"Q U A D R A T I C   E Q U A T I O N","#f86263","#141414", cmd2)
-anim(0,74,"F O R M U L A S","#91de78","#141414", cmd3)
+anim(0,74,"P H O T O   R O B O T","#88bf77","#141414", cmd4)
+anim(0,111,"G R I D","#8f77bf","#141414",cmd5)
+#148
+anim(0,185,"E X I T","#ffcc66","#141414",cmd1)
+
+
 #canvas=Canvas(aken,width=600,height=300)
 #canvas.grid(columnspan=3)
 
